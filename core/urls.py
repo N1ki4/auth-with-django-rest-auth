@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import UserCreate, LoginView
+from .views import RecipeList, RecipeDetail
 
 
 urlpatterns = [
-	path('users/', UserCreate.as_view(), name='user_create'),
-	path('login/', LoginView.as_view(), name='login'),
+	path('<int:pk>/', RecipeDetail.as_view()),
+	path('', RecipeList.as_view()),
 ]
